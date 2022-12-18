@@ -23,4 +23,13 @@ export class BoardsService {
     this.boards.push(board);
     return board;
   }
+
+  getBoardById(id: string): Board {
+    return this.boards.find((board) => board.id === id);
+  }
+
+  deleteBoard(id: string): void {
+    this.boards = this.boards.filter((board) => board.id !== id);
+  }
+  // 해당 아이디가 다른 것만 남기고 같은 것은 삭제하게 한다.
 }
