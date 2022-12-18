@@ -32,4 +32,10 @@ export class BoardsService {
     this.boards = this.boards.filter((board) => board.id !== id);
   }
   // 해당 아이디가 다른 것만 남기고 같은 것은 삭제하게 한다.
+
+  updateBoardStatus(id: string, status: BoardStatus): Board {
+    const board = this.getBoardById(id);
+    board.status = status;
+    return board;
+  }
 }
