@@ -34,7 +34,9 @@ export class BoardsService {
   }
 
   deleteBoard(id: string): void {
-    this.boards = this.boards.filter((board) => board.id !== id);
+    const found = this.getBoardById(id);
+
+    this.boards = this.boards.filter((board) => board.id !== found.id);
   }
   // 해당 아이디가 다른 것만 남기고 같은 것은 삭제하게 한다.
 
