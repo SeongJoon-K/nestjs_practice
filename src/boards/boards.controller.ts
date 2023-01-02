@@ -19,10 +19,10 @@ export class BoardsController {
   getBoardById(@Param('id') id: number): Promise<Board> {
     return this.boardsService.getBoardById(id);
   }
-  @Get('/')
-  getAllBoard(): Board[] {
-    return this.boardsService.getAllBoards();
-  }
+  // @Get('/')
+  // getAllBoard(): Board[] {
+  //   return this.boardsService.getAllBoards();
+  // }
 
   // @Post('/')
   // @UsePipes(ValidationPipe)
