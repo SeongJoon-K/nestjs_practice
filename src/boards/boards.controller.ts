@@ -29,10 +29,11 @@ export class BoardsController {
   updateBoardStatus(@Param('id', ParseIntPipe) id: number, @Body('status', BoardStatusValidationPipe) status: BoardStatus) {
     return this.boardsService.updateBoardStatus(id, status);
   }
-  // @Get('/')
-  // getAllBoard(): Board[] {
-  //   return this.boardsService.getAllBoards();
-  // }
+
+  @Get()
+  getAllBoard(): Promise<Board[]> {
+    return this.boardsService.getAllBoards();
+  }
 
   // @Post('/')
   // @UsePipes(ValidationPipe)
